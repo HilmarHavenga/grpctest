@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+package calculate;
+
+service Calculator
+{
+	rpc Sum (EquationRequest) returns (CalculationResult);
+}
+
+message EquationRequest
+{
+	double left = 1;
+	double right = 2;
+}
+
+message CalculationResult
+{
+	double result = 1;
+}
